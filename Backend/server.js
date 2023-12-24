@@ -1,6 +1,6 @@
 const connectDB = require('./config/database')
 const express = require('express');
-
+const citizenRoutes = require('./routes/citizenroutes')
 
 connectDB()
 
