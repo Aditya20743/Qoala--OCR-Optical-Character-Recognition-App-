@@ -1,0 +1,1 @@
+# Qoala--OCR-Optical-Character-Recognition-App-
