@@ -10,7 +10,9 @@ const IDUpload = ({ isImageUploaded, imageloading, handleUploadID, image }) => {
         </Button>
       ) : isImageUploaded && !imageloading ? (
         <Image src={image} thumbnail style={{ maxHeight: '300px'  }} />
-      ) : null}
+      ) : <Button variant="light" onClick={handleUploadID}>
+          Upload ID Card
+        </Button>}
     </div>
   );
 };

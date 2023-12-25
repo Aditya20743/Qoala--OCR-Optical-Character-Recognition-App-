@@ -15,12 +15,12 @@ const App = () => {
   const [image, setImage] = useState();
   const [isImageUploaded, setIsImageUploaded] = useState(false);
   const [userData, setUserData] = useState({
-    idNumber: 'ID Number',
-    name: 'Name ',
-    last_name: 'Last Name ',
-    date_of_birth: 'Date of Birth ',
-    date_of_issue: 'Date of Issue ',
-    date_of_expiry: 'Date of Expiry ',
+    idNumber: '',
+    name: ' ',
+    last_name: ' ',
+    date_of_birth: ' ',
+    date_of_issue: ' ',
+    date_of_expiry: ' ',
     // Add other fields here
   });
   const [imageloading, setImageLoading] = useState(false);

@@ -14,7 +14,7 @@ const UserDetails = ({ userData, handleSave, handleCancel, handleDelete }) => {
 
   return (
     <div>
-      <div className="d-flex flex-column align-items-center">
+      <div className="d-flex flex-column">
         <h6 className="my-2">ID Number: {idNumber}</h6>
         <h6 className="my-2">Name: {name}</h6>
         <h6 className="my-2">Last Name: {last_name}</h6>

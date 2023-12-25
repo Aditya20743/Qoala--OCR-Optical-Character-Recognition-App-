@@ -34,7 +34,7 @@ const AddDetailsManually = ({ handleAddManually }) => {
   };
 
   return (
-    <>
+    <div style={ {display: 'flex', justifyContent: 'center' }}>
       <Button variant="light" onClick={() => setShowModal(true)}>
         Add Details Manually
       </Button>
@@ -45,7 +45,7 @@ const AddDetailsManually = ({ handleAddManually }) => {
         <Modal.Body>
           <Form>
             <Form.Group controlId="idNumber">
-              <Form.Label>ID Number:</Form.Label>
+              <Form.Label>ID Number: </Form.Label>
               <Form.Control
                 type="text"
                 name="idNumber"
@@ -54,7 +54,7 @@ const AddDetailsManually = ({ handleAddManually }) => {
               />
             </Form.Group>
             <Form.Group controlId="name">
-              <Form.Label>name:</Form.Label>
+              <Form.Label>Name: </Form.Label>
               <Form.Control
                 type="text"
                 name="name"
@@ -63,7 +63,7 @@ const AddDetailsManually = ({ handleAddManually }) => {
               />
             </Form.Group>
             <Form.Group controlId="last_name">
-              <Form.Label>last_name:</Form.Label>
+              <Form.Label>Last Name: </Form.Label>
               <Form.Control
                 type="text"
                 name="last_name"
@@ -72,7 +72,7 @@ const AddDetailsManually = ({ handleAddManually }) => {
               />
             </Form.Group>
             <Form.Group controlId="date_of_birth">
-              <Form.Label>date_of_birth:</Form.Label>
+              <Form.Label>Date of Birth: </Form.Label>
               <Form.Control
                 type="text"
                 name="date_of_birth"
@@ -81,7 +81,7 @@ const AddDetailsManually = ({ handleAddManually }) => {
               />
             </Form.Group>
             <Form.Group controlId="date_of_issue">
-              <Form.Label>date_of_issue:</Form.Label>
+              <Form.Label>Date of Issue: </Form.Label>
               <Form.Control
                 type="text"
                 name="date_of_issue"
@@ -90,7 +90,7 @@ const AddDetailsManually = ({ handleAddManually }) => {
               />
             </Form.Group>
             <Form.Group controlId="date_of_expiry">
-              <Form.Label>date_of_expiry:</Form.Label>
+              <Form.Label>Date of Expiry: </Form.Label>
               <Form.Control
                 type="text"
                 name="date_of_expiry"
@@ -107,7 +107,7 @@ const AddDetailsManually = ({ handleAddManually }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 };
 
