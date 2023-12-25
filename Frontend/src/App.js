@@ -5,15 +5,19 @@ import IDSearch from './components/IDSearch';
 import UserDetails from './components/UserDetails';
 import MyVerticallyCenteredModal from './components/Modal';
 import axios from 'axios';
+import './App.css';
 
 const App = () => {
   const [modalShow, setModalShow] = useState(false);
   const [image, setImage] = useState();
   const [isImageUploaded, setIsImageUploaded] = useState(false);
   const [userData, setUserData] = useState({
-    name: 'name',
-    last_name: 'lastname',
-    date_of_birth: 'date of birth',
+    idNumber: 'Enter ID Manually',
+    name: 'Enter Name Manually',
+    last_name: 'Enter Last Name Manually',
+    date_of_birth: 'Enter Date of Birth Manually',
+    date_of_issue: 'Enter Date of Issue Manually',
+    date_of_expiry: 'Enter Date of Expiry Manually',
     // Add other fields here
   });
   const [imageloading, setImageLoading] = useState(false);
@@ -40,6 +44,7 @@ const App = () => {
   };
 
   const handleDelete = () => {
+    setUserData({ });
     setIsImageUploaded(false);
     setisFindingID(false);
   };
@@ -51,10 +56,13 @@ const App = () => {
       });
 
       setUserData({
+        idNumber: response.data.idNumber,
         name: response.data.name,
         last_name: response.data.last_name,
         date_of_birth: response.data.date_of_birth,
-        // Update other fields
+        date_of_issue: response.data.date_of_issue,
+        date_of_expiry: response.data.date_of_expiry,
+
       });
       setisFindingID(true);
     } catch (error) {

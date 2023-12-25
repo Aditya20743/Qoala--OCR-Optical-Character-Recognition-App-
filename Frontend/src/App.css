@@ -1,38 +1,62 @@
-.App {
+/* App.css */
+/* 
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form_outline {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header component styles */
+/* Add styles for your Header component here */
+
+/* Adjust styles for IDUpload */
+.IDUpload {
+  margin: 20px;
+  /* Add any other styles */
+}
+
+/* Adjust styles for IDSearch */
+.IDSearch {
   text-align: center;
+  margin: 20px;
+  /* Add any other styles */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Adjust styles for MyVerticallyCenteredModal */
+.MyVerticallyCenteredModal {
+  /* Center the modal and add other styles */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 20px;
+  /* Add any other styles */
 }
 
-.App-link {
-  color: #61dafb;
+/* Adjust styles for UserDetails */
+.UserDetails {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* Add any other styles */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+/* Specific styles for elements within components */
+/* Add specific styles for elements within your components here */

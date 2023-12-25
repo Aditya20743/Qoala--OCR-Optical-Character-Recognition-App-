@@ -1,0 +1,94 @@
+/* Styling for MyVerticallyCenteredModal component as a card */
+
+/* Center the modal content */
+*{
+    padding: 3px;
+}
+.modal-dialog {
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin: 10px auto; /* Center the modal horizontally */
+  }
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style the modal header */
+  .modal-header {
+    background-color: #007bff;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  /* Style the modal title */
+  .modal-title {
+    margin-left: 20px;
+  }
+  
+  /* Style the modal body */
+
+  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-header{
+    display: flex;
+    padding: 10px;
+    /* flex-direction: row; */
+    align-items: center;
+    
+  }
+  /* Center the input file element */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Add margin to the input file element */
+  .text-center input[type='file'] {
+    margin-bottom: 15px;
+  }
+  
+  /* Style the modal footer */
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-top: none;
+  }
+  
+  /* Style the Upload and Close buttons in the Modal Footer */
+  .modal-footer button {
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style the Close button */
+  .modal-footer button:nth-child(2) {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+  }
+  
+  /* Style the Upload button */
+  .modal-footer button:nth-child(1) {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+  }
+  
+  /* Disable the Upload button when no file is selected */
+  .modal-footer button:nth-child(1):disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
