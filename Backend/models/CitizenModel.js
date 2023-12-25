@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const citizenSchema = mongoose.Schema({
-    identification_number: {
+    idNumber: {
         type: String,
         unique: true,
         required: true,
