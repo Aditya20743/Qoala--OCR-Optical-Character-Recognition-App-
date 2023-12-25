@@ -67,7 +67,7 @@ console.log(CONFIG.credentials);
 
 
 // Endpoint to perform text detection
-app.post('/upload', upload.single('image'), async (req, res) => {
+app.post('https://ocr-backend2.onrender.com/upload', upload.single('image'), async (req, res) => {
     try {
       const fileName = 'uploads/' + req.file.filename
       console.log(fileName)
