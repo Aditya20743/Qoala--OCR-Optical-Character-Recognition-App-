@@ -24,7 +24,7 @@ app.use('/api/citizen', citizenRoutes)
 // Multer setup
 const storage = multer.diskStorage({
     destination(req, file, cb) {
-      cb(null, "uploads/");
+      cb(null, "");
     },
     filename(req, file, cb) {
       cb(
@@ -67,9 +67,9 @@ console.log(CONFIG.credentials);
 
 
 // Endpoint to perform text detection
-app.post('https://ocr-backend2.onrender.com/upload', upload.single('image'), async (req, res) => {
+app.post('/upload', upload.single('image'), async (req, res) => {
     try {
-      const fileName = 'uploads/' + req.file.filename
+      const fileName = '' + req.file.filename
       console.log(fileName)
      // Performs text detection on the local file
       const [result] = await client.textDetection(fileName);
