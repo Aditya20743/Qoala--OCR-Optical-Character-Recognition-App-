@@ -1,4 +1,4 @@
-Deploy in Process
+Error Occured during Deploy due to Need of Premium for Uploading Images on Backend hosting provider - Onrender or we could use Cloudinary 
 
 Demo Working Video-
 
