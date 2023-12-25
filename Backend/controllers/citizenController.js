@@ -48,15 +48,20 @@ const getCitizen = async(req, res) => {
     }
 }
 
-const deleteCitizen = async(req, res) => {
-    const citizen = await Citizen.findOne({idNumber: req.body.idNumber})
-    if(citizen) {
-        await citizen.remove()
-        res.json({message: 'Citizen removed'})
+const deleteCitizen = async (req, res) => {
+  try {
+    const citizen = await Citizen.findOneAndDelete({ idNumber: req.body.idNumber });
+
+    if (citizen) {
+      res.json({ message: 'Citizen removed' });
     } else {
-        res.status(404)
-        throw new Error('Citizen not found')
+      res.status(404).json({ error: 'Citizen not found' });
     }
-}
+  } catch (error) {
+    console.error('Error deleting citizen:', error);
+    res.status(500).json({ error: 'Server error' });
+  }
+};
+
 
 module.exports = {createCitizen, getCitizen, deleteCitizen}
