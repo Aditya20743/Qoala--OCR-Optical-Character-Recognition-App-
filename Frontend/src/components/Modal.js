@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import axios from 'axios';
-import './Modal.css';
+// import './Modal.css';
 
 
 

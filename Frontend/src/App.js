@@ -3,26 +3,53 @@ import Header from './components/Header';
 import IDUpload from './components/IDUpload';
 import IDSearch from './components/IDSearch';
 import UserDetails from './components/UserDetails';
+import AddDetailsManually from './components/AddDetailsManually';
 import MyVerticallyCenteredModal from './components/Modal';
 import axios from 'axios';
 import './App.css';
 import './bootstrap.min.css';
 
 const App = () => {
+  // State variables to manage different aspects of the application
   const [modalShow, setModalShow] = useState(false);
   const [image, setImage] = useState();
   const [isImageUploaded, setIsImageUploaded] = useState(false);
   const [userData, setUserData] = useState({
-    idNumber: 'Enter ID Manually',
-    name: 'Enter Name Manually',
-    last_name: 'Enter Last Name Manually',
-    date_of_birth: 'Enter Date of Birth Manually',
-    date_of_issue: 'Enter Date of Issue Manually',
-    date_of_expiry: 'Enter Date of Expiry Manually',
+    idNumber: 'ID Number',
+    name: 'Name ',
+    last_name: 'Last Name ',
+    date_of_birth: 'Date of Birth ',
+    date_of_issue: 'Date of Issue ',
+    date_of_expiry: 'Date of Expiry ',
     // Add other fields here
   });
   const [imageloading, setImageLoading] = useState(false);
   const [isFindingID, setisFindingID] = useState(false);
+
+  const handleAddManually = async (manuallyEnteredData) => {
+    try {
+      const requiredFields = ['idNumber', 'name', 'last_name', 'date_of_birth', 'date_of_issue', 'date_of_expiry'];
+  
+      // Check if any required fields are missing in the manually entered data
+      const missingFields = requiredFields.filter(field => !manuallyEnteredData[field]);
+  
+      if (missingFields.length > 0) {
+        // Show an alert listing the missing fields
+        const missingFieldsUppercase = missingFields.map(field => field.toUpperCase());
+        alert(`Data Saved but with these fields empty: ${missingFieldsUppercase.join(', ')}`);
+        return;
+      }
+      // console.log(manuallyEnteredData)
+      // Post the manually entered data
+      await axios.post('http://localhost:5000/api/citizen', manuallyEnteredData);
+      alert('Manually Entered Data Saved Successfully');
+    } catch (error) {
+      console.error('Error saving manually entered data:', error.message);
+      alert('Error saving manually entered data');
+      // Handle error as needed
+    }
+  };
+  
 
   const handleSave = async () => {
     
@@ -97,15 +124,11 @@ const App = () => {
     if (!idNumber) {
       // Handle case where idNumber is not available in userData
       alert('Enter idNumber available to Find.');
-      console.error('No idNumber available to delete.');
+      console.error('No idNumber available to Find.');
       return;
     }
     try {
-      const response = await axios.post('http://localhost:5000/api/citizen', {
-        idNumber,
-      });
-  
-      
+      const response = await axios.get(`http://localhost:5000/api/citizen?idNumber=${idNumber}`);
 
       setUserData({
         idNumber: response.data.idNumber,
@@ -121,6 +144,15 @@ const App = () => {
     } catch (error) {
       console.error('Error during data retrieval:', error.message);
       alert('No Details found of given idNumber');
+      setUserData({
+        idNumber: '',
+        name: '',
+        last_name: '',
+        date_of_birth: '',
+        date_of_issue:'',
+        date_of_expiry: '',
+
+      });
       // Handle error as needed
     }
   };
@@ -136,6 +168,7 @@ const App = () => {
             handleUploadID={handleUploadID}
             image={image}
           />
+          <AddDetailsManually handleAddManually={handleAddManually} />
           <IDSearch handleFind={handleFind} />
           <MyVerticallyCenteredModal
             show={modalShow}
