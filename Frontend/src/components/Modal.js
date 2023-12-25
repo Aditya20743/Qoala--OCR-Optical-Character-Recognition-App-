@@ -75,7 +75,7 @@ const MyVerticallyCenteredModal = (props) => {
   };
 
   return (
-    <Modal
+    <Modal className="Modal"
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"

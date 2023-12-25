@@ -25,13 +25,13 @@ const UserDetails = ({ userData, handleSave, handleCancel, handleDelete }) => {
       </div>
       <div className="my-3">
         <Button className="mt-3 ml-2" variant="success" onClick={handleSave}>
-          Save
+          Save To Database
         </Button>
         <Button className="mt-3 mr-2" variant="primary" onClick={handleCancel}>
-          Cancel
+          Clear Details
         </Button>
         <Button className="mt-3 ml-2" variant="danger" onClick={handleDelete}>
-          Delete
+          Delete From Database
         </Button>
       </div>
     </div>
