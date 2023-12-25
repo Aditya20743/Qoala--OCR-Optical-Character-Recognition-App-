@@ -41,7 +41,7 @@ const App = () => {
       }
       // console.log(manuallyEnteredData)
       // Post the manually entered data
-      await axios.post('http://localhost:5000/api/citizen', manuallyEnteredData);
+      await axios.post('https://ocr-backend2.onrender.com/api/citizen', manuallyEnteredData);
       alert('Manually Entered Data Saved Successfully');
     } catch (error) {
       console.error('Error saving manually entered data:', error.message);
@@ -67,7 +67,7 @@ const App = () => {
   
         return;
       }
-      await axios.post('http://localhost:5000/api/citizen', userData);
+      await axios.post('https://ocr-backend2.onrender.com/api/citizen', userData);
       alert('Data Saved Successfully');
     } catch (error) {
       console.error('Error saving data:', error.message);
@@ -102,7 +102,7 @@ const App = () => {
       }
   
       // Make a DELETE request to your server to delete the citizen with the specified idNumber
-      await axios.delete('http://localhost:5000/api/citizen', {
+      await axios.delete('https://ocr-backend2.onrender.com/api/citizen', {
         data: { idNumber }, // Send idNumber in the request body
       });
   
@@ -128,7 +128,7 @@ const App = () => {
       return;
     }
     try {
-      const response = await axios.get(`http://localhost:5000/api/citizen?idNumber=${idNumber}`);
+      const response = await axios.get(`https://ocr-backend2.onrender.com/api/citizen?idNumber=${idNumber}`);
 
       setUserData({
         idNumber: response.data.idNumber,

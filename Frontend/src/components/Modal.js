@@ -23,7 +23,7 @@ const MyVerticallyCenteredModal = (props) => {
             },
         };
 
-        const response = await axios.post('http://localhost:5000/upload', formData, config);
+        const response = await axios.post('https://ocr-backend2.onrender.com/upload', formData, config);
 
       // Log the entire response for debugging
       console.log('Response:', response);
