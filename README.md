@@ -2,6 +2,11 @@
 
 Create an OCR (Optical Character Recognition) App that can recognize thai id cards and get the required information. Save this information for retrival later.
 
+Final Website
+![image](https://github.com/Aditya20743/Qoala--OCR-Optical-Character-Recognition-App-/assets/79308024/bcb8e8cc-0300-4c01-9980-825b1f8a9b01)
+Deploy in Process
+
+
 
 **Objective**
 
