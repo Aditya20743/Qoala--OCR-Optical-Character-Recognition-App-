@@ -4,27 +4,27 @@ const citizenSchema = mongoose.Schema({
     idNumber: {
         type: String,
         unique: true,
-        required: true,
+        // required: true,
     },
     name: {
         type: String,
-        required: true
+        // required: true
     },
     last_name: {
         type: String,
-        required: true
+        // required: true
     },
     date_of_birth: {
         type: String,
-        required: true
+        // required: true
     },
     date_of_issue: {
         type: String,
-        required: true
+        // required: true
     },
     date_of_expiry: {
         type: String,
-        required: true
+        // required: true
     }
 })
 

@@ -38,15 +38,23 @@ const createCitizen = asyncHandler(async (req, res) => {
     }
   });
 
-const getCitizen = async(req, res) => {
-    const citizen = await Citizen.findOne({idNumber: req.body.idNumber})
-    if(citizen){
-        res.json(citizen)
-    } else{
-        res.status(404)
-        throw new Error('Citizen not found')
+  const getCitizen = async (req, res) => {
+    try {
+      const { idNumber } = req.query;
+      const citizen = await Citizen.findOne({ idNumber });
+  
+      if (citizen) {
+        res.json(citizen);
+      } else {
+        res.status(404).json({ message: 'Citizen not found' });
+      }
+    } catch (error) {
+      res.status(500).json({ message: 'Server Error' });
+      console.error('Error finding citizen:', error.message);
     }
-}
+  };
+  
+  
 
 const deleteCitizen = async (req, res) => {
   try {
