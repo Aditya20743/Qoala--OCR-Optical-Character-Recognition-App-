@@ -24,6 +24,38 @@ Please ensure you have the following dependencies installed on your system:
 
 - ℹ️ NodeJS > v18.16
 
+In order to run this project locally, simply fork and clone the repository or download as zip and unzip on your machine.
+
+- Open the project in your prefered code editor.
+- Go to terminal -> New terminal (If you are using VS code)
+- Split your terminal into two (run the Frontend on one terminal and the Backend on the other terminal)
+
+In the first terminal
+
+```
+$ cd Frontend
+$ npm install (to install frontend-side dependencies)
+$ npm run  start (to start the frontend)
+
+```
+
+In the second terminal
+
+- cd Backend and Set environment variables in .env
+- Create your mongoDB connection url, which you'll use as your MONGO_URI
+- Supply the following credentials
+
+```
+#  --- .env  ---
+
+NODE_ENV = development
+PORT =5000
+URI =http://localhost:3000
+MONGO_URI =
+client_email =
+private_key =
+```
+
 **- Install the modules**
 
 npm install
